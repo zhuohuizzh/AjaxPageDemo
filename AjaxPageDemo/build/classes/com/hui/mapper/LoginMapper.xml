@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hui.mapper.LoginMapper">
+
+	<select id="countAllLogin" resultType="int">
+		select count(*) from login
+	</select>
+
+	<select id="queryLoginPage" parameterType="HashMap" resultType="com.hui.entity.Login">
+		select * from login limit #{pageStart},#{pageSize}
+	</select>
+</mapper>
